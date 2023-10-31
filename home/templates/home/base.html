@@ -13,7 +13,7 @@
             <a href="#" class="text-lg font-semibold hover:text-stone-500">Add items</a>
             <a href="#" class="text-lg font-semibold hover:text-stone-500">Search</a>
 
-            <a href="#" class="px-6 py-3 text-lg font-semibold bg-red-600 text-white hover:bg-stone-500">Register</a>
+            <a href="{% url 'home:signup' %}" class="px-6 py-3 text-lg font-semibold bg-red-600 text-white hover:bg-stone-500">Sign Up</a>
             <a href="#" class="px-6 py-3 text-lg font-semibold bg-stone-700 text-white hover:bg-stone-500">Sign in</a>
         </div>
     </nav>
@@ -35,7 +35,7 @@
         <ul class="space-y-2">
             <li>
             <a href="#" class="text-lg text-white hover:text-sky-500">About</a>
-            <a href="{% url 'contacts' %}" class="text-lg text-white hover:text-sky-500">Contact</a>
+            <a href="{% url 'home:contacts' %}" class="text-lg text-white hover:text-sky-500">Contact</a>
             <a href="#" class="text-lg text-white hover:text-sky-500">Privacy Policy</a>
             <a href="#" class="text-lg text-white hover:text-sky-500">Terms of use</a>
             </li>
