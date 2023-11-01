@@ -25,8 +25,11 @@ SECRET_KEY = 'django-insecure-rf9u-)dq!e3a1^ztn$dm(^t^ef)kad+!uej4w04&kc*a72i5b6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-struk49-podgethecat-hnl8fdc9drd.ws-eu105.gitpod.io']
+ALLOWED_HOSTS = ['8000-struk49-podgethecat-73zomicgasx.ws-eu105.gitpod.io']
 
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 # Application definition
 

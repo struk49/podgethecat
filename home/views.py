@@ -15,7 +15,7 @@ def index(request):
     })
 
 
-def contacts(request):
+def contact(request):
     return render(request, 'home/contacts.html')
 
 
@@ -26,7 +26,7 @@ def signup(request):
         if form.is_valid():
             form.save()
 
-            return redirect('login/')
+            return redirect('/login/')
     else:
         form = SignupForm()
 
