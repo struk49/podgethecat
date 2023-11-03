@@ -1,10 +1,18 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 
-from .forms import NewItemForm, EditItemForm
+from .forms import AddItemForm, EditItemForm
 from .models import Item
 
 # Create your views here.
+def search(request):
+    items = Item.objects.filter(is_sold=False)
+
+    return render(request, 'item/search.html', {
+        'items': items,
+    })
+
+
 def detail(request, pk):
     item = get_object_or_404(Item, pk=pk)
     related_items = Item.objects.filter(category=item.category, is_sold=False).exclude(pk=pk)[0:3]
@@ -16,9 +24,9 @@ def detail(request, pk):
 
 
 @login_required
-def new(request):
+def add(request):
     if request.method == "POST":
-        form = NewItemForm(request.POST, request.FILES)
+        form = AddItemForm(request.POST, request.FILES)
 
         if form.is_valid():
             item = form.save(commit=False)
@@ -27,7 +35,7 @@ def new(request):
 
             return redirect('item:detail', pk=item.id)
     else:
-            form = NewItemForm()
+            form = AddItemForm()
 
 
     return render(request, 'item/form.html', {

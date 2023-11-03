@@ -4,7 +4,7 @@ from .models import Item
 
 INPUT_CLASSES = 'w-full py-4 px-6 mb-3 bg-stone-200 rounded-xl border'
 
-class NewItemForm(forms.ModelForm):
+class AddItemForm(forms.ModelForm):
     class Meta:
         model = Item
         fields = ('category', 'name', 'description', 'price', 'image',)
