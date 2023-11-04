@@ -3,7 +3,7 @@
 {% block title %}Search Items{% endblock %}
 
 {% block content%}
-    <div class="pb-6 grid grid-cols-4 gap-4 bg-stone-200">
+    <div class="pb-6 grid grid-cols-4 gap-4">
         <div class="col-span-1">
             <form method="get" action="{% url 'item:search' %}">
                 <input name="query" class="w-full py-4 px-6 border rounded-xl" type="text" value="{{ query }}" placeholder="Find clothes , kitchenware, bed and bathroom items">
