@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-rf9u-)dq!e3a1^ztn$dm(^t^ef)kad+!uej4w04&kc*a72i5b6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-struk49-podgethecat-83ve3w2nknv.ws-eu105.gitpod.io']
+ALLOWED_HOSTS = ['8000-struk49-podgethecat-6gx2zdnitsu.ws-eu105.gitpod.io']
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'conversation',
     'home',
     'item',
     'dashboard',
