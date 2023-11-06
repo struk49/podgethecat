@@ -25,6 +25,15 @@ def about(request):
     return render(request, 'home/about.html')
 
 
+
+def privacy(request):
+    return render(request, 'home/privacy.html')
+
+
+def terms(request):
+    return render(request, 'home/terms.html')
+
+
 def signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
