@@ -12,23 +12,22 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 import dj_database_url
 
-from pathlib import Path
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-rf9u-)dq!e3a1^ztn$dm(^t^ef)kad+!uej4w04&kc*a72i5b6'
+SECRET_KEY = os.environ.get('SECRET_KEY', '2erm2g25fi&()6+d)rp0(1gw!vp^v2aoxpmfebc^1_2gbjc-@#')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-struk49-podgethecat-slv6v32ta95.ws-eu106.gitpod.io']
-
+ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
@@ -88,17 +87,9 @@ WSGI_APPLICATION = 'podgethecat.wsgi.application'
  #     }
  # }
      
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
+ATABASES = {
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+}
 
 
 
